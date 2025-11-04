@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConnectHub | Choose Your Role</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #2196f3, #64b5f6);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+    }
+    .role-container {
+      background: #ffffff;
+      color: #333;
+      border-radius: 18px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+    .role-buttons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .role-btn {
+      background: linear-gradient(135deg, #42a5f5, #478ed1);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 45%;
+      min-width: 160px;
+    }
+    .role-btn:hover {
+      background: linear-gradient(135deg, #1e88e5, #1976d2);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <div class="role-container">
+    <h1>Welcome to ConnectHub</h1>
+    <p>Please select your role to continue</p>
+    <div class="role-buttons">
+      <button class="role-btn" onclick="selectRole('Donor')">💙 I'm a Donor</button>
+      <button class="role-btn" onclick="selectRole('NGO')">🌱 I'm an NGO</button>
+    </div>
+  </div>
+
+<script>
+  function selectRole(role) {
+    localStorage.setItem("selectedRole", role);
+    if (role === "Donor") {
+      window.location.href = "R2_donor.html";
+    } else if (role === "NGO") {
+      window.location.href = "R2_ngo.html";
+    }
+  }
+</script>
+
+</body>
+</html>
